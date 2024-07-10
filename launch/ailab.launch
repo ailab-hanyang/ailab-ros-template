@@ -1,0 +1,10 @@
+<launch>
+    <arg name="method" default="1"/>
+    <arg name="number" default="10"/>
+
+    <node pkg="my_first_pkg" type="ai" name="ai" output="screen"/>
+    <node pkg="my_first_pkg" type="lab" name="lab" output="screen">
+        <param name="calculation_method" type="int" value="$(arg method)"/>
+        <param name="calculation_number" type="int" value="$(arg number)"/>
+    </node>
+</launch>
