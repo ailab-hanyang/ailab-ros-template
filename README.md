@@ -57,9 +57,9 @@ For each node iteration, the topic [ai] value increases by 1 starting from 0 and
 In node [lab], publish topic [lab], type is [std_msgs::Uint16].
 For each time subscribed topic [ai] (in callback), do basic arithmetic operations (plus, minus, multiply, divide) (Define in[lab.cpp]). 
 With ros parameter in launch file [lab/calculation_method], [lab/calculation_number], do some calculation and publish [lab] topic. 
-
-$(ai.data) (+,-,*,/) (lab/calculation_number)$
-
+```
+Calculation : [ai.data] (+,-,*,/) [lab/calculation_number]
+```
 ### Code execution
 - rosrun
 
