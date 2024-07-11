@@ -1,44 +1,63 @@
 # ailab-ros-template
 ailab ros template for beginner
 
-## 사전 요구 사항
+## Pre-requirement
 
-- ROS Noetic (또는 시스템과 호환되는 다른 버전)
-- Catkin 작업 공간 설정
+- ROS Noetic & Ubuntu 20.04 LTS
 
-## 패키지 구조
+## Structure of Package
 ```bash
 ailab-ros-template/
-├── CMakeLists.txt
-├── package.xml
 ├── include/
 │ ├── ai.hpp
 │ └── lab.hpp
 ├── src/
 │ ├── ai.cpp
 │ └── lab.cpp
+├── CMakeLists.txt
+├── package.xml
 └── README.md 
 ```
-## 설치
+## Install
 
 ```bash
-# Workspace 제작
+# Create workspace 
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
-# src 내부에 git clone
+# Git clone in src
 git clone https://github.com/ailab-konkuk/ailab-ros-template.git
 # Build and Source bash
 catkin_make
 source devel/setup.bash
 ```
-## 실행
-### rosrun을 사용할 경우
+## Execution
+### Using rosrun
 ```bash
 roscore
 rosrun ailab_ros_template ai
 rosrun ailab_ros_template lab
 ```
-### roslaunch를 사용할 경우
+### Using roslaunch
 ```bash
 roslaunch ailab_ros_template ailab.launch
 ```
+## Code Description
+### rqt_graph
+![rqt_graph](./resource/ailab.png)
+
+### Description
+- ai Node
+
+In node [ai], publish topic [ai], type is [std_msgs::Uint16].
+For each node iteration, the topic [ai] value increases by 1 starting from 0 and publishes that value.
+
+- lab Node
+
+In node [lab], publish topic [lab], type is [std_msgs::Uint16].
+For each time subscribed topic [ai] (in callback), do basic arithmetic operations (plus, minus, multiply, divide) (Define in[lab.cpp]). 
+With ros parameter in launch file [lab/calculation_method], [lab/calculation_number], do some calculation and publish [lab] topic. 
+
+$(ai.data) (+,-,*,/) (lab/calculation_number)$
+
+### Code execution
+![code_execution](./resource/code.png)
