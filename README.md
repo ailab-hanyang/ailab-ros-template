@@ -27,17 +27,18 @@ cd ~/catkin_ws/src
 # Git clone in src
 git clone https://github.com/ailab-konkuk/ailab-ros-template.git
 # Build and Source bash
+cd ..
 catkin_make
 source devel/setup.bash
 ```
 ## Execution
-### Using rosrun
+### Using rosrun (3 terminal is needed)
 ```bash
 roscore
 rosrun ailab_ros_template ai
 rosrun ailab_ros_template lab
 ```
-### Using roslaunch
+### Using roslaunch (in 1 terminal)
 ```bash
 roslaunch ailab_ros_template ailab.launch
 ```

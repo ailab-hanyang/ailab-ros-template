@@ -27,6 +27,7 @@ private:
     std_msgs::UInt16 m_o_lab;
 
     // Member variable
+    bool m_is_ai = false;
     int m_p_method = 0;
     int m_p_number = 0;
 

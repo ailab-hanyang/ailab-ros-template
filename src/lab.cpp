@@ -26,7 +26,7 @@ ClassExample2::~ClassExample2() {}
 void ClassExample2::getCallback(const std_msgs::UInt16::ConstPtr &msg)
 {
   ROS_WARN("LAB GET: [%d]", msg->data);
-
+  m_is_ai = true;
   switch (m_p_method) {
     case PLUS:
       m_i_ai.data = msg->data + m_p_number;
@@ -49,11 +49,15 @@ void ClassExample2::getCallback(const std_msgs::UInt16::ConstPtr &msg)
 
 // Algorithm
 void ClassExample2::function() {
+  if(m_is_ai){
     // Algorithm
     m_o_lab.data = m_i_ai.data;
     
     // Publish
     m_labPub.publish(m_o_lab);
+
+    ROS_WARN("LAB SEND: [%d]", m_o_lab.data);
+  }
 }    
 
 int main(int argc, char **argv) {

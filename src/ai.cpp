@@ -32,6 +32,8 @@ void ClassExample1::function() {
 
     // Publish
     m_aiPub.publish(m_o_ai);
+
+    ROS_INFO("AI SEND: [%d]", m_o_ai.data);
 }    
 
 
