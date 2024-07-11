@@ -44,7 +44,7 @@ roslaunch ailab_ros_template ailab.launch
 ```
 ## Code Description
 ### rqt_graph
-![rqt_graph](./resource/ailab.png)
+![rqt_graph](./resource/rqt_graph.png)
 
 ### Description
 - ai Node
@@ -61,4 +61,10 @@ With ros parameter in launch file [lab/calculation_method], [lab/calculation_num
 $(ai.data) (+,-,*,/) (lab/calculation_number)$
 
 ### Code execution
-![code_execution](./resource/code.png)
+- rosrun
+
+![rosrun_execution](./resource/rosrun.png)
+
+- roslaunch
+
+![roslaunch_execution](./resource/roslaunch.png)
