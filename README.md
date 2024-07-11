@@ -35,12 +35,12 @@ source devel/setup.bash
 ### Using rosrun (3 terminal is needed)
 ```bash
 roscore
-rosrun ailab_ros_template ai
-rosrun ailab_ros_template lab
+rosrun ailab-ros-template ai
+rosrun ailab-ros-template lab
 ```
 ### Using roslaunch (in 1 terminal)
 ```bash
-roslaunch ailab_ros_template ailab.launch
+roslaunch ailab-ros-template ailab.launch
 ```
 ## Code Description
 ### rqt_graph
